@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Study Notes 🌷</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <div>
+        <h1>My Study Notes</h1>
+        <span>Learn • Save • Grow</span>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" title="Toggle theme">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MY PERSONAL LEARNING SPACE</p>
+        <h2>Keep your doubts,<br><span>ideas & important notes.</span></h2>
+        <p class="hero-text">Store your Python, HTML, CSS and JavaScript notes in one beautiful place.</p>
+      </div>
+      <div class="hero-emoji">🌸</div>
+    </section>
+
+    <section class="toolbar">
+      <div class="search-box">
+        <span>🔎</span>
+        <input id="searchInput" type="search" placeholder="Search your notes...">
+      </div>
+      <button id="addBtn" class="primary-btn">＋ Add Note</button>
+    </section>
+
+    <nav class="categories" id="categories">
+      <button class="category active" data-category="All">All</button>
+      <button class="category" data-category="Python">🐍 Python</button>
+      <button class="category" data-category="HTML">🌐 HTML</button>
+      <button class="category" data-category="CSS">🎨 CSS</button>
+      <button class="category" data-category="JavaScript">⚡ JavaScript</button>
+    </nav>
+
+    <section id="notesGrid" class="notes-grid"></section>
+
+    <div id="emptyState" class="empty-state hidden">
+      <div>📝</div>
+      <h3>No notes found</h3>
+      <p>Try another search or add a new note.</p>
+    </div>
+  </main>
+
+  <!-- VIEW NOTE MODAL -->
+  <div id="viewModal" class="modal hidden">
+    <div class="view-card">
+      <button id="closeView" class="close-btn">×</button>
+
+      <div class="view-header">
+        <span id="viewCategory" class="badge"></span>
+        <button id="favoriteBtn" class="favorite-btn">☆</button>
+      </div>
+
+      <h2 id="viewTitle"></h2>
+      <p id="viewDate" class="note-date"></p>
+
+      <div id="viewContent" class="full-note"></div>
+
+      <div class="view-actions">
+        <button id="viewEditBtn" class="secondary-btn">✏️ Edit</button>
+        <button id="viewDeleteBtn" class="danger-btn">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD / EDIT MODAL -->
+  <div id="editModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeEdit" class="close-btn">×</button>
+      <p class="eyebrow">NOTE EDITOR</p>
+      <h2 id="modalTitle">Add a new note</h2>
+
+      <form id="noteForm">
+        <label for="noteTitle">Title</label>
+        <input id="noteTitle" type="text" placeholder="Example: What is a callback?" required>
+
+        <label for="noteCategory">Topic</label>
+        <select id="noteCategory">
+          <option>Python</option>
+          <option>HTML</option>
+          <option>CSS</option>
+          <option>JavaScript</option>
+        </select>
+
+        <label for="noteContent">Your doubt / note</label>
+        <textarea id="noteContent" rows="10"
+          placeholder="Write your explanation, doubt, examples, code or important points..."
+          required></textarea>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
